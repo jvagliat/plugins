@@ -185,7 +185,8 @@ final class InputAwareWebView extends WebView {
             // onCreateInputConnection() on targetView on the same thread as
             // targetView.getHandler(). It will also call subsequent InputConnection methods on this
             // thread. This is the IME thread in cases where targetView is our proxyAdapterView.
-            imm.isActive(containerView);
+            if (containerView != null) // pablo??????????????
+              imm.isActive(containerView);
           }
         });
   }
